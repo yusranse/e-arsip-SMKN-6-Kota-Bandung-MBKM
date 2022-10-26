@@ -11,7 +11,8 @@
               </svg>              
             <h3 class="py-2 mx-2 px-0.5 text-sm font-medium tracking-wider capitalize">Tambah Data</h3>
         </div>
-        <form action="{{ route('suratmasuk.store.suratmasuk') }}" method="POST" class="mx-4 my-4">
+        <form action="{{ route('suratmasuk.store.suratmasuk') }}" method="POST" class="mx-4 my-4"
+            enctype="multipart/form-data">
             @csrf
             <div class="grid gap-6 mb-6 md:grid-cols-2">
             <div>
@@ -36,7 +37,7 @@
                 </div>
                 <div>                    
                     <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300" for="filemasuk">Upload file</label>
-                    <input class="block w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 cursor-pointer dark:text-gray-400 focus:outline-none dark:bg-gray-800 dark:border-gray-600 dark:placeholder-gray-400" aria-describedby="pdf_masuk_help" id="filemasuk" name="filemasuk" type="file">
+                    <input class="block w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 cursor-pointer dark:text-gray-400 focus:outline-none dark:bg-gray-800 dark:border-gray-600 dark:placeholder-gray-400" id="filemasuk" name="filemasuk" type="file">
                 </div>
                 <button type="submit" class="inline-flex bg-blue-700 rounded-lg shadow-sm hover:bg-blue-800 text-white font-semibold capitalize px-8 py-2 w-fit">
                     <span>Save</span>

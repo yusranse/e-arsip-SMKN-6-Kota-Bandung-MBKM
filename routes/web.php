@@ -52,6 +52,7 @@ Route::middleware(['auth'])->group(function () {
         Route::post('/suratmasuk/{id}/update', [SuratMasukController::class, 'update'])->name('update.suratmasuk');
         Route::get('/suratmasuk/{id}/edit', [SuratMasukController::class, 'edit'])->name('edit.suratmasuk');
         Route::delete('/suratmasuk/{id}/destroy', [SuratMasukController::class, 'destroy'])->name('destroy.suratmasuk');
+        Route::get('/download',[SuratMasukController::class,'download'])->name('download.suratmasuk');
     });
     
     /* Route Report Page */

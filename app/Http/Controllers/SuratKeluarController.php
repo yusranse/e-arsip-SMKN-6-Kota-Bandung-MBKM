@@ -31,15 +31,28 @@ class SuratKeluarController extends Controller
             'judul_surat'     => 'required',
             'indeks_surat'    => 'required',
             'tujuan_surat'    => 'required',
+            'filekeluar'      => 'mimes:pdf',
         ]);
 
-        Surat_keluar::create([
-            'tanggal_keluar' => $request->tanggal_keluar,
-            'no_surat'       => $request->no_surat,
-            'judul_surat'    => $request->judul_surat,
-            'indeks_surat'   => $request->indeks_surat,
-            'tujuan_surat'    => $request->tujuan_surat,
-        ]);
+        $suratkeluar = new Surat_keluar();
+        $suratkeluar->no_surat       = $request->input('no_surat');
+        $suratkeluar->judul_surat    = $request->input('judul_surat');
+        $suratkeluar->indeks_surat   = $request->input('indeks_surat');
+        $suratkeluar->tujuan_surat   = $request->input('tujuan_surat');
+        $suratkeluar->tanggal_keluar  = $request->input('tanggal_keluar');
+        $file                        = $request->file('filekeluar');
+        $fileName   = 'SuratKeluar - '. $file->getClientOriginalName();
+        $file->storePubliclyAs("/suratkeluar", $fileName);
+        $suratkeluar->filekeluar  = $fileName;
+        $suratkeluar->save();
+
+        // Surat_keluar::create([
+            // 'tanggal_keluar' => $request->tanggal_keluar,
+            // 'no_surat'       => $request->no_surat,
+            // 'judul_surat'    => $request->judul_surat,
+            // 'indeks_surat'   => $request->indeks_surat,
+            // 'tujuan_surat'    => $request->tujuan_surat,
+        // ]);
 
         return redirect('suratkeluar.index');
     }
@@ -56,13 +69,19 @@ class SuratKeluarController extends Controller
     public function update(Request $request)
     {
         $input = $request->all();
-        $suratmasuk = Surat_keluar::query()->where('id', $input['id'])->first();
-        $suratmasuk->tanggal_keluar = $request->get('tanggal_keluar');
-        $suratmasuk->no_surat = $request->get('no_surat');
-        $suratmasuk->judul_surat = $request->get('judul_surat');
-        $suratmasuk->indeks_surat = $request->get('indeks_surat');
-        $suratmasuk->tujuan_surat = $request->get('tujuan_surat');
-        $suratmasuk->save();
+        $suratkeluar = Surat_keluar::query()->where('id', $input['id'])->first();
+        $suratkeluar->tanggal_keluar = $request->get('tanggal_keluar');
+        $suratkeluar->no_surat = $request->get('no_surat');
+        $suratkeluar->judul_surat = $request->get('judul_surat');
+        $suratkeluar->indeks_surat = $request->get('indeks_surat');
+        $suratkeluar->tujuan_surat = $request->get('tujuan_surat');
+
+        if($request->hasFile('filekeluar'))
+        {
+            $file = $request->file('filekeluar')->storePubliclyAs('/suratkeluar','SuratKeluar - '. $request->file('filekeluar')->getClientOriginalName());
+            $suratkeluar->filekeluar = 'SuratKeluar - '. $request->file('filekeluar')->getClientOriginalName();
+            $suratkeluar->save();
+        }
 
         return redirect('suratkeluar.index');
     }

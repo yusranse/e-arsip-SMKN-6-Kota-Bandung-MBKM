@@ -43,8 +43,8 @@ class SuratMasukController extends Controller
         $suratmasuk->asal_surat     = $request->input('asal_surat');
         $suratmasuk->tanggal_masuk  = $request->input('tanggal_masuk');
         $file                       = $request->file('filemasuk');
-        $fileName   = 'SuratMasuk'. $file->getClientOriginalName();
-        $file->move('datasuratmasuk/', $fileName);
+        $fileName   = 'SuratMasuk - '. $file->getClientOriginalName();
+        $file->storePubliclyAs("/suratmasuk", $fileName);
         $suratmasuk->filemasuk  = $fileName;
         $suratmasuk->save();
 
@@ -69,17 +69,37 @@ class SuratMasukController extends Controller
         $suratmasuk->judul_surat = $request->get('judul_surat');
         $suratmasuk->indeks_surat = $request->get('indeks_surat');
         $suratmasuk->asal_surat = $request->get('asal_surat');
-        $suratmasuk->save();
 
+        if($request->hasFile('filemasuk'))
+        {
+            $file = $request->file('filemasuk')->storePubliclyAs('/suratmasuk','SuratMasuk - '. $request->file('filemasuk')->getClientOriginalName());
+            $suratmasuk->filemasuk = 'suratMasuk-'. $request->file('filemasuk')->getClientOriginalName();
+            $suratmasuk->save();
+        }
         return redirect('suratmasuk.index');
     }
 
     public function destroy($id)
     {
+        
         $suratmasuk = Surat_masuk::query()->where('id', $id)->first();
-        if ($suratmasuk){
-            $suratmasuk->delete();
-        }
+            // unlink('/suratmasuk'.$suratmasuk->filemasuk);
+        $suratmasuk->delete();
         return back();
     }
+
+    public function download()
+    {
+        $suratmasuk = Surat_masuk::query()->where('id', $id)->first();
+        $pdf = PDF::loadview('suratmasuk.index', ['filemasuk' => $suratmasuk]);
+        return $pdf->download();
+    }
+    
+    //public function download(Request $request)
+    //{
+        //$suratmasuk = \App\SuratMasuk::all();
+        //$pdf = PDF::loadview('suratmasuk.index', compact('inst','suratmasuk','pdf'));
+        //return $pdf->stream();
+    //}
+
 }
