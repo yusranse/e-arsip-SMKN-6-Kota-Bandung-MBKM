@@ -24,12 +24,8 @@
                         <div class="sm:flex items-center sm:justify-start bg-grey-100 border-none">                            
                               <img class="w-32 h-32 sm:m-2 mx-auto sm:mx-0 rounded-full" src="https://therminic2018.eu/wp-content/uploads/2018/07/dummy-avatar.jpg" />                            
                             <ul class="text-center sm:text-left text-white sm:mx-2 bg-red">
-                                <li class="my-4 uppercase font-semibold text-s sm:text-md">
+                                <li class="my-4 uppercase font-semibold text-s sm:text-md text-centersapi">
                                 {{ auth()->user()->username }}
-                                </li>
-
-                                <li class="my-4 uppercase font-semibold">
-                                  Admin
                                 </li>
 
                                 <li class="my-4 ">
@@ -47,12 +43,12 @@
                                     <span class="py-1">Edit Profile</span>
                                   </button>
                                 </a>
-                                <button class="justify-center inline-flex bg-blue-500 hover:bg-white hover:text-gray-900 dark:bg-gray-100 text-white active:text-white active:bg-blue-800 dark:text-gray-800 dark:active:text-gray-700 text-xs font-bold uppercase px-3 py-1 rounded outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150 w-full sm:w-44" type="button">                                    
+                                {{-- <button class="justify-center inline-flex bg-blue-500 hover:bg-white hover:text-gray-900 dark:bg-gray-100 text-white active:text-white active:bg-blue-800 dark:text-gray-800 dark:active:text-gray-700 text-xs font-bold uppercase px-3 py-1 rounded outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150 w-full sm:w-44" type="button">                                    
                                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-5 h-5 pt-0.5">
                                       <path stroke-linecap="round" stroke-linejoin="round" d="M16.5 10.5V6.75a4.5 4.5 0 10-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 002.25-2.25v-6.75a2.25 2.25 0 00-2.25-2.25H6.75a2.25 2.25 0 00-2.25 2.25v6.75a2.25 2.25 0 002.25 2.25z" />
                                     </svg>                                    
                                     <span class="py-1">Change Password</span>
-                                </button>
+                                </button> --}}
                             </div>
                         </div>
                     </div>

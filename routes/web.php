@@ -15,6 +15,7 @@ use App\Http\Controllers\TambahDataMasukController;
 use App\Http\Controllers\TambahDataKeluarController;
 use App\Http\Controllers\EditProfileController;
 use App\Http\Controllers\PasswordController;
+use App\Models\Surat_masuk;
 
 /*
 |--------------------------------------------------------------------------
@@ -42,6 +43,10 @@ Route::middleware(['auth'])->group(function () {
 
     Route::get('dashboard', [DashboardController::class, 'index'])->name('dashboard');
     
+    Route::get('editprofile', [EditProfileController::class, 'index'])->name('editprofile');
+    Route::get('/profile/edit', [EditProfileController::class, 'edit']);
+    Route::post('/profile/update', [EditProfileController::class, 'update'])->name('update.profile');
+
     Route::get('profile', [ProfileController::class, 'index'])->name('profile');
     
     /* Route Surat Masuk */
@@ -52,7 +57,8 @@ Route::middleware(['auth'])->group(function () {
         Route::post('/suratmasuk/{id}/update', [SuratMasukController::class, 'update'])->name('update.suratmasuk');
         Route::get('/suratmasuk/{id}/edit', [SuratMasukController::class, 'edit'])->name('edit.suratmasuk');
         Route::delete('/suratmasuk/{id}/destroy', [SuratMasukController::class, 'destroy'])->name('destroy.suratmasuk');
-        Route::get('/download',[SuratMasukController::class,'download'])->name('download.suratmasuk');
+        Route::get('/download/{id}',[SuratMasukController::class,'download'])->name('download.suratmasuk');
+        
     });
     
     /* Route Report Page */
@@ -64,22 +70,20 @@ Route::middleware(['auth'])->group(function () {
             Route::post('/suratkeluar/{id}/update', [SuratKeluarController::class, 'update'])->name('update.suratkeluar');
             Route::get('/suratkeluar/{id}/edit', [SuratKeluarController::class, 'edit'])->name('edit.suratkeluar');
             Route::delete('/suratkeluar/{id}/destroy', [SuratKeluarController::class, 'destroy'])->name('destroy.suratkeluar');
+            Route::get('/download/{id}',[SuratKeluarController::class,'download'])->name('download.suratkeluar');
         });
     });
+
+    Route::get('reportsuratmasuk', [ReportMasukController::class, 'index'])->name('reportmasuk');
+    Route::get('reportsuratmasuk/export', [ReportMasukController::class, 'export'])->name('export.suratmasuk');
+    
+    Route::get('reportsuratkeluar', [ReportKeluarController::class, 'index'])->name('reportkeluar');
+    Route::get('reportsuratkeluar/export', [ReportKeluarController::class, 'export'])->name('export.suratkeluar');
     
 });
-
-Route::get('reportsuratmasuk', [ReportMasukController::class, 'index'])->name('reportmasuk');
-
-Route::get('reportsuratkeluar', [ReportKeluarController::class, 'index'])->name('reportkeluar');
 
 
 Route::get('editdatakeluar', [EditDataKeluarController::class, 'index'])->name('editdatakeluar');
 
-Route::get('tambahdatamasuk', [TambahDataMasukController::class, 'index'])->name('tambahdatamasuk');
-
-Route::get('tambahdatakeluar', [TambahDataKeluarController::class, 'index'])->name('tambahdatakeluar');
-
-Route::get('editprofile', [EditProfileController::class, 'index'])->name('editprofile');
 
 Route::get('password', [PasswordController::class, 'index'])->name('password');

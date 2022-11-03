@@ -20,6 +20,8 @@ return new class extends Migration
             $table->boolean('indeks_surat');
             $table->string('tujuan_surat');
             $table->date('tanggal_keluar');
+            $table->date('tanggal_masuk');
+            $table->string('filekeluar');
             $table->timestamps();
         });
     }

@@ -11,4 +11,13 @@ class EditProfileController extends Controller
             'title' => 'Edit Profile'
         ]);
     }
+
+    public function update(Request $request)
+    {
+        $request->user()->update(
+            $request->all()
+        );
+
+        return redirect()->back();
+    }
 }

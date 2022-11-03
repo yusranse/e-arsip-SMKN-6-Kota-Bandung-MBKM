@@ -27,7 +27,7 @@
                     </div>
                   <table class="w-full">
                     <thead>
-                      <tr class="text-xs font-semibold tracking-wide text-left text-gray-500 uppercase border-b dark:border-gray-700 bg-gray-50 dark:text-gray-400 dark:bg-gray-800">
+                      <tr class="text-xs font-semibold tracking-wide text-left text-gray-500 uppercase border-b dark:border-gray-700 bg-gray-50 dark:text-gray-400 dark:bg-gray-800 text-center">
                         <th class="px-4 py-3">No</th>
                         <th class="px-4 py-3">Nomor Surat</th>
                         <th class="px-4 py-3">Judul Surat</th>
@@ -43,7 +43,7 @@
                       @endphp
                       @if ($dtsurat_masuk->count())
                             @foreach ($dtsurat_masuk as $surat_masuk)
-                        <tr class="bg-gray-50 dark:bg-gray-800 hover:bg-gray-100 dark:hover:bg-gray-900 text-gray-700 dark:text-gray-400">
+                        <tr class="bg-gray-50 dark:bg-gray-800 hover:bg-gray-100 dark:hover:bg-gray-900 text-gray-700 dark:text-gray-400 text-center">
                           <td class="px-4 py-3 text-sm">{{ $id++ }}</td>
                           <td class="px-4 py-3 text-sm">{{ $surat_masuk->no_surat}}</td>
                           <td class="px-4 py-3 text-sm">{{ $surat_masuk->judul_surat}}</td>
@@ -54,14 +54,14 @@
               
                             <div class="items-center">
                             <ul class="inline-flex">
-                                  <li class="flex rounded-full p-1 mx-1 bg-yellow-400 text-gray-100 active:bg-yellow-600">                                                                        
+                                  <li class="flex rounded-xl py-2 px-2 mx-1 bg-yellow-400 text-gray-100 active:bg-yellow-600">                                                                        
                                         <a href="{{ route('suratmasuk.edit.suratmasuk', $surat_masuk->id) }}">
                                           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-6 h-6">
                                             <path stroke-linecap="round" stroke-linejoin="round" d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L10.582 16.07a4.5 4.5 0 01-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 011.13-1.897l8.932-8.931zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0115.75 21H5.25A2.25 2.25 0 013 18.75V8.25A2.25 2.25 0 015.25 6H10" />
                                           </svg>
                                         </a>                                   
                                   </li>
-                                  <li class="flex rounded-full p-1 mx-1 bg-red-600 text-gray-100 active:bg-red-800">
+                                  <li class="flex rounded-xl py-2 px-2 mx-1 bg-red-600 text-gray-100 active:bg-red-800">
                                     <form action="{{ route('suratmasuk.destroy.suratmasuk', $surat_masuk->id) }}" method="POST">
                                       @method('DELETE')
                                       @csrf
@@ -72,16 +72,12 @@
                                       </button>
                                     </form>
                               
-                                  <li class="flex rounded-full p-1 mx-1 bg-blue-600 text-gray-100 active:bg-blue-800">
-                    
-                                    <form action="{{ route('suratmasuk.download.suratmasuk', $surat_masuk->filemasuk) }}" method="POST">
-                                      @csrf
-                                      <button>
-                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-6 h-6">
-                                          <path stroke-linecap="round" stroke-linejoin="round" d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5M16.5 12L12 16.5m0 0L7.5 12m4.5 4.5V3" />
-                                        </svg>                                                                          
-                                      </button>
-                                    </form>  
+                                  <li class="flex rounded-xl py-2 px-2 mx-1 bg-blue-600 text-gray-100 active:bg-blue-800">
+                                    <a href="{{ asset('storage/suratmasuk/' . $surat_masuk->filemasuk) }}">
+                                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-6 h-6">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5M16.5 12L12 16.5m0 0L7.5 12m4.5 4.5V3" />
+                                      </svg>
+                                    </a>
                                   </li>
                                 </ul>
                             </div>  

@@ -17,6 +17,7 @@
                 </div>
             
                 <!-- Menu -->
+                
                 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 p-4 gap-4">
                   <div class="bg-blue-500 dark:bg-gray-800 shadow-lg rounded-md flex items-center justify-between p-3 border-b-4 border-blue-600 dark:border-gray-600 text-white font-medium group">
                     <div class="flex justify-center items-center w-14 h-14 bg-white rounded-full transition-all duration-300 transform group-hover:rotate-12  dark:group-hover:bg-blue-700">
@@ -54,7 +55,6 @@
                       <svg width="30" height="30" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="stroke-current text-blue-800 dark:text-gray-800 dark:group-hover:text-white transform transition-transform duration-500 ease-in-out">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M20.25 7.5l-.625 10.632a2.25 2.25 0 01-2.247 2.118H6.622a2.25 2.25 0 01-2.247-2.118L3.75 7.5m8.25 3v6.75m0 0l-3-3m3 3l3-3M3.375 7.5h17.25c.621 0 1.125-.504 1.125-1.125v-1.5c0-.621-.504-1.125-1.125-1.125H3.375c-.621 0-1.125.504-1.125 1.125v1.5c0 .621.504 1.125 1.125 1.125z" />
                       </svg>
-                      
                     </div>
                     <div class="text-right">
                       <p class="text-xl">Download</p>
@@ -63,7 +63,6 @@
                 </div>
                 <!-- ./Menu -->
 
-                
             
                 <div class="grid grid-cols-1 lg:grid-cols-2 p-4 gap-4">
             
@@ -92,59 +91,26 @@
                             </tr>
                           </thead>
                           <tbody>
-                            <tr class="text-gray-100">
-                              <th class="border-t-0 px-4 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left">1</th>
-                              <td class="border-t-0 px-4 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">5,480</td>
-                              <td class="border-t-0 px-4 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
-                                <div class="flex items-center">
-                                  <span class="mr-2">70%</span>
-                                  <div class="relative w-full">
-                                    <div class="overflow-hidden h-2 text-xs flex rounded bg-blue-200">
-                                      <div style="width: 70%" class="shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-blue-600"></div>
-                                    </div>
-                                  </div>
-                                </div>
-                              </td>
-                              <td class="border-t-0 px-4 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">5,480</td>
-                              <td class="border-t-0 px-4 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">5,480</td>
-                              <td class="border-t-0 px-4 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">5,480</td>
-                            </tr>
-                            <tr class="text-gray-100">
-                              <th class="border-t-0 px-4 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left">2</th>
-                              <td class="border-t-0 px-4 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">3,380</td>
-                              <td class="border-t-0 px-4 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
-                                <div class="flex items-center">
-                                  <span class="mr-2">40%</span>
-                                  <div class="relative w-full">
-                                    <div class="overflow-hidden h-2 text-xs flex rounded bg-blue-200">
-                                      <div style="width: 40%" class="shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-blue-500"></div>
-                                    </div>
-                                  </div>
-                                </div>
-                              </td>
-                              <td class="border-t-0 px-4 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">5,480</td>
-                              <td class="border-t-0 px-4 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">5,480</td>
-                              <td class="border-t-0 px-4 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">5,480</td>
-                            </tr>
-                            <tr class="text-gray-100">
-                              <th class="border-t-0 px-4 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left">3</th>
-                              <td class="border-t-0 px-4 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">4,105</td>
-                              <td class="border-t-0 px-4 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
-                                <div class="flex items-center">
-                                  <span class="mr-2">45%</span>
-                                  <div class="relative w-full">
-                                    <div class="overflow-hidden h-2 text-xs flex rounded bg-pink-200">
-                                      <div style="width: 45%" class="shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-pink-500"></div>
-                                    </div>
-                                  </div>
-                                </div>
-                              </td>
-                              <td class="border-t-0 px-4 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">5,480</td>
-                              <td class="border-t-0 px-4 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">5,480</td>
-                              <td class="border-t-0 px-4 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">5,480</td>
-                            </tr>
+                            @php
+                            $id = 1;
+                            @endphp
+                            @if ($dtsurat_masuk->count())
+                              @foreach ($dtsurat_masuk as $surat_masuk)
+                                <tr class="text-gray-100">
+                                  <td class="px-1 py-3 text-center text-xs">{{ $id++ }}</td>
+                                  <td class="px-1 py-3 text-center text-xs">{{ $surat_masuk->no_surat}}</td>
+                                  <td class="px-1 py-3 text-center text-xs">{{ $surat_masuk->judul_surat}}</td>
+                                  <td class="px-1 py-3 text-center text-xs">{{ $surat_masuk->indeks_surat}}</td>
+                                  <td class="px-1 py-3 text-center text-xs">{{ $surat_masuk->asal_surat}}</td>
+                                  <td class="px-1 py-3 text-center text-xs">{{ $surat_masuk->tanggal_masuk}}</td>
+                                </tr>
+                              @endforeach
+                            @endif
                           </tbody>
                         </table>
+                        <div class="px-5">
+                          {{ $dtsurat_masuk->links('pagination::default')}}
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -176,59 +142,26 @@
                             </tr>
                           </thead>
                           <tbody>
-                            <tr class="text-gray-100">
-                              <th class="border-t-0 px-4 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left">1</th>
-                              <td class="border-t-0 px-4 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">5,480</td>
-                              <td class="border-t-0 px-4 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
-                                <div class="flex items-center">
-                                  <span class="mr-2">70%</span>
-                                  <div class="relative w-full">
-                                    <div class="overflow-hidden h-2 text-xs flex rounded bg-blue-200">
-                                      <div style="width: 70%" class="shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-blue-600"></div>
-                                    </div>
-                                  </div>
-                                </div>
-                              </td>
-                              <td class="border-t-0 px-4 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">5,480</td>
-                              <td class="border-t-0 px-4 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">5,480</td>
-                              <td class="border-t-0 px-4 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">5,480</td>
-                            </tr>
-                            <tr class="text-gray-100">
-                              <th class="border-t-0 px-4 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left">2</th>
-                              <td class="border-t-0 px-4 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">3,380</td>
-                              <td class="border-t-0 px-4 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
-                                <div class="flex items-center">
-                                  <span class="mr-2">40%</span>
-                                  <div class="relative w-full">
-                                    <div class="overflow-hidden h-2 text-xs flex rounded bg-blue-200">
-                                      <div style="width: 40%" class="shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-blue-500"></div>
-                                    </div>
-                                  </div>
-                                </div>
-                              </td>
-                              <td class="border-t-0 px-4 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">5,480</td>
-                              <td class="border-t-0 px-4 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">5,480</td>
-                              <td class="border-t-0 px-4 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">5,480</td>
-                            </tr>
-                            <tr class="text-gray-100">
-                              <th class="border-t-0 px-4 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left">3</th>
-                              <td class="border-t-0 px-4 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">4,105</td>
-                              <td class="border-t-0 px-4 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
-                                <div class="flex items-center">
-                                  <span class="mr-2">45%</span>
-                                  <div class="relative w-full">
-                                    <div class="overflow-hidden h-2 text-xs flex rounded bg-pink-200">
-                                      <div style="width: 45%" class="shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-pink-500"></div>
-                                    </div>
-                                  </div>
-                                </div>
-                              </td>
-                              <td class="border-t-0 px-4 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">5,480</td>
-                              <td class="border-t-0 px-4 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">5,480</td>
-                              <td class="border-t-0 px-4 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">5,480</td>
-                            </tr>
+                            @php
+                            $id = 1;
+                            @endphp
+                            @if ($dtsurat_keluar->count())
+                              @foreach ($dtsurat_keluar as $surat_keluar)
+                                <tr class="text-gray-100">
+                                  <td class="px-1 py-3 text-center text-xs">{{ $id++ }}</td>
+                                  <td class="px-1 py-3 text-center text-xs">{{ $surat_keluar->no_surat}}</td>
+                                  <td class="px-1 py-3 text-center text-xs">{{ $surat_keluar->judul_surat}}</td>
+                                  <td class="px-1 py-3 text-center text-xs">{{ $surat_keluar->indeks_surat}}</td>
+                                  <td class="px-1 py-3 text-center text-xs">{{ $surat_keluar->tujuan_surat}}</td>
+                                  <td class="px-1 py-3 text-center text-xs">{{ $surat_keluar->tanggal_keluar}}</td>
+                                </tr>
+                              @endforeach
+                            @endif
                           </tbody>
                         </table>
+                        <div class="px-5">
+                          {{ $dtsurat_keluar->links('pagination::default')}}
+                        </div>
                       </div>
                     </div>
                   </div>
