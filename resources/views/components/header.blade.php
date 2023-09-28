@@ -7,13 +7,7 @@
     </svg>    
     <span class="hidden md:block  tracking-wider text-lg  font-semibold ml-1">Digital Arsip</span>
   </div>
-  <div class="flex justify-between items-center h-14 bg-grey-100 dark:bg-gray-800 header-right ">
-    <div class="bg-white rounded items-center sm:w-72 md:w-64 lg:w-full max-w-sm shadow-sm w-32  ml-4">
-      <input type="search" name="" id="" placeholder="Search" class="relative w-32 sm:w-72 md:w-64 lg:w-full pl-3 text-sm text-black outline-none border-2 border-gray-300 focus:outline-none bg-white" />
-      <button class="cari outline-none focus:outline-none absolute bg-blue-700 p-2 py-2 rounded-r-full">
-        <svg class="w-5 text-white h-5 cursor-pointer" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" stroke="currentColor" viewBox="0 0 24 24"><path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
-      </button>
-    </div>
+  <div class="flex justify-end items-center h-14 bg-grey-100 dark:bg-gray-800 header-right ">
     <ul class="flex items-center">
       <li>
         <button

@@ -81,9 +81,3 @@ Route::middleware(['auth'])->group(function () {
     Route::get('reportsuratkeluar/export', [ReportKeluarController::class, 'export'])->name('export.suratkeluar');
     
 });
-
-
-Route::get('editdatakeluar', [EditDataKeluarController::class, 'index'])->name('editdatakeluar');
-
-
-Route::get('password', [PasswordController::class, 'index'])->name('password');

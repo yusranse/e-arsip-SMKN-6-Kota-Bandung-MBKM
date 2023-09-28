@@ -10,8 +10,15 @@ use Illuminate\Support\Facades\Storage;
 
 class SuratKeluarController extends Controller
 {
-    public function index(){
-    $dtsurat_keluar = Surat_keluar::orderBy('id', 'desc')->paginate(10);
+    public function index(Request $request){
+
+        if($request->has('search')){
+            $dtsurat_keluar = Surat_keluar::where('no_surat', 'LIKE', '%' .$request->search. '%')
+            ->orWhere('judul_surat', 'LIKE', '%' .$request->search. '%')->paginate(10);
+        }else{
+            $dtsurat_keluar = Surat_keluar::orderBy('created_at', 'desc')->paginate(10);
+        }
+    
         return view('/suratkeluar.index', compact('dtsurat_keluar'), [
             'title' => 'Surat Keluar',
         ]);

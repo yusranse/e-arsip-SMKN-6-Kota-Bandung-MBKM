@@ -2,8 +2,6 @@
 
 namespace App\Http\Controllers;
 
-
-
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Models\Surat_masuk;
@@ -14,7 +12,14 @@ use Illuminate\Support\Facades\Storage;
 class SuratMasukController extends Controller
 {
     public function index(Request $request){
-    $dtsurat_masuk = Surat_masuk::orderBy('id', 'desc')->paginate(10);
+    
+        if($request->has('search')){
+            $dtsurat_masuk = Surat_masuk::where('no_surat', 'LIKE', '%' .$request->search. '%')
+            ->orWhere('judul_surat', 'LIKE', '%' .$request->search. '%')->paginate(10);
+        }else{
+            $dtsurat_masuk = Surat_masuk::orderBy('created_at', 'desc')->paginate(10);
+        }
+        
         return view('/suratmasuk.index', compact('dtsurat_masuk'), [
             'title' => 'Surat Masuk',
         ]);
@@ -53,7 +58,7 @@ class SuratMasukController extends Controller
 
         return redirect('suratmasuk.index');
     }
-
+    
     public function edit($id)
     {
         $suratmasuk = Surat_masuk::query()->where('id', $id)->first();
@@ -75,7 +80,7 @@ class SuratMasukController extends Controller
 
         if($request->hasFile('filemasuk'))
         {
-            $file = $request->file('filemasuk')->storeAs('/suratmasuk','SuratMasuk - '. $request->file('filemasuk')->getClientOriginalName());
+            $file = $request->file('filemasuk')->storePubliclyAs('/suratmasuk','SuratMasuk - '. $request->file('filemasuk')->getClientOriginalName());
             $suratmasuk->filemasuk = 'suratMasuk-'. $request->file('filemasuk')->getClientOriginalName();
             $suratmasuk->save();
         }

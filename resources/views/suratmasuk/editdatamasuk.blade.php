@@ -11,41 +11,41 @@
             </svg>
             <h3 class="py-2 mx-2 px-0.5 text-sm font-medium tracking-wider capitalize">Edit Data</h3>
         </div>
-            <form class="p-10" action="{{ route('suratmasuk.update.suratmasuk', $suratmasuk->id) }}" method="POST"enctype="multipart/form-data">
+            <form class="p-10" action="{{ route('suratmasuk.update.suratmasuk', $suratmasuk->id) }}" method="POST" enctype="multipart/form-data">
             @csrf
-            <div class="grid gap-6 mb-6 md:grid-cols-2">
-                <input type="hidden" id="id" name="id" value="{{ $suratmasuk->id }}">
-                <div>
-                    <label for="no_surat" class="block mb-2 text-sm font-semibold capitalize text-gray-900 dark:text-gray-300">Nomor Surat</label>
-                    <input type="text" value="{{ $suratmasuk->no_surat }}" id="no_surat" name="no_surat"  class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-800 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required>
+                <div class="grid gap-6 mb-6 md:grid-cols-2">
+                    <input type="hidden" id="id" name="id" value="{{ $suratmasuk->id }}">
+                    <div>
+                        <label for="no_surat" class="block mb-2 text-sm font-semibold capitalize text-gray-900 dark:text-gray-300">Nomor Surat</label>
+                        <input type="text" value="{{ $suratmasuk->no_surat }}" id="no_surat" name="no_surat"  class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-800 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required>
+                    </div>
+                    <div>
+                        <label for="judul_surat" class="block mb-2 text-sm font-semibold capitalize text-gray-900 dark:text-gray-300">Judul Surat</label>
+                        <input type="text" value="{{ $suratmasuk->judul_surat }}" id="judul_surat" name="judul_surat"  class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-800 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required>
+                    </div>
+                    <div>
+                        <label for="indeks_surat" class="block mb-2 text-sm font-semibold capitalize text-gray-900 dark:text-gray-300">Indeks Surat</label>
+                        <input type="number" value="{{ $suratmasuk->indeks_surat }}" id="indeks_surat" name="indeks_surat"  class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-800 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required>
+                    </div>
+                    <div>
+                        <label for="asal_surat" class="block mb-2 text-sm font-semibold capitalize text-gray-900 dark:text-gray-300">Asal Surat</label>
+                        <input type="text" value="{{ $suratmasuk->asal_surat }}" id="asal_surat" name="asal_surat"  class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-800 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required>
+                    </div>
+                    <div class="relative">
+                        <label for="tanggal_masuk" class="block mb-2 text-sm font-semibold capitalize text-gray-900 dark:text-gray-300">Tanggal Masuk</label>
+                        <input type="date" value="{{ $suratmasuk->tanggal_masuk }}" id="tanggal_masuk" name="tanggal_masuk"   class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-800 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 datepicker-input" placeholder="Select date">
+                    </div>
+                    <div>
+                        <label class="block mb-2 text-sm font-semibold capitalize text-gray-900 dark:text-gray-300" for="filemasuk">
+                            File saat ini : {{ $suratmasuk->filemasuk }}
+                        </label> 
+                        <input class="block w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 cursor-pointer dark:text-gray-400 focus:outline-none dark:bg-gray-800 dark:border-gray-600 dark:placeholder-gray-400" name="filemasuk" id="filemasuk" type="file">
+                    </div>
+                    <button class="inline-flex bg-blue-700 rounded-lg shadow-sm hover:bg-blue-800 text-white font-semibold capitalize px-8 py-2 w-fit">
+                        <span>Save</span>
+                    </button>
                 </div>
-                <div>
-                    <label for="judul_surat" class="block mb-2 text-sm font-semibold capitalize text-gray-900 dark:text-gray-300">Judul Surat</label>
-                    <input type="text" value="{{ $suratmasuk->judul_surat }}" id="judul_surat" name="judul_surat"  class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-800 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required>
-                </div>
-                <div>
-                    <label for="indeks_surat" class="block mb-2 text-sm font-semibold capitalize text-gray-900 dark:text-gray-300">Indeks Surat</label>
-                    <input type="number" value="{{ $suratmasuk->indeks_surat }}" id="indeks_surat" name="indeks_surat"  class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-800 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required>
-                </div>
-                <div>
-                    <label for="asal_surat" class="block mb-2 text-sm font-semibold capitalize text-gray-900 dark:text-gray-300">Asal Surat</label>
-                    <input type="text" value="{{ $suratmasuk->asal_surat }}" id="asal_surat" name="asal_surat"  class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-800 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required>
-                </div>
-                <div class="relative">
-                    <label for="tanggal_masuk" class="block mb-2 text-sm font-semibold capitalize text-gray-900 dark:text-gray-300">Tanggal Masuk</label>
-                    <input type="date" value="{{ $suratmasuk->tanggal_masuk }}" id="tanggal_masuk" name="tanggal_masuk"   class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-800 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 datepicker-input" placeholder="Select date">
-                </div>
-                <div>
-                    <label class="block mb-2 text-sm font-semibold capitalize text-gray-900 dark:text-gray-300" for="filemasuk">
-                        File saat ini : {{ $suratmasuk->filemasuk }}
-                    </label> 
-                    <input class="block w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 cursor-pointer dark:text-gray-400 focus:outline-none dark:bg-gray-800 dark:border-gray-600 dark:placeholder-gray-400" name="filemasuk" id="filemasuk" type="file">
-                </div>
-                <button class="inline-flex bg-blue-700 rounded-lg shadow-sm hover:bg-blue-800 text-white font-semibold capitalize px-8 py-2 w-fit">
-                    <span>Save</span>
-                </button>
-            </div>
-        </form>
+            </form>
+        </div>
     </div>
-
 @endsection

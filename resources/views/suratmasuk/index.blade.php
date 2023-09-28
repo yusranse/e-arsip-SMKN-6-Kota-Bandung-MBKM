@@ -17,14 +17,22 @@
             <div class="mt-10 mx-4">
               <div class="w-full overflow-hidden rounded-lg shadow-xs">
                 <div class="w-full overflow-x-auto bg-blue-700 dark:bg-gray-900 mx-auto">
-                    <div class="relative m-2 p-2 text-left">
-                        <a href="{{ route('suratmasuk.add.suratmasuk')}}" class="inline-flex bg-blue-500 hover:bg-white hover:text-gray-900 dark:bg-gray-50 dark:hover:bg-blue-700 dark:hover:text-white  dark:active:bg-blue-800  text-white active:bg-blue-800 active:text-white dark:text-gray-800 dark:active:text-white text-xs font-bold uppercase px-3 py-1 rounded outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150" type="button">
-                          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-6 h-6">
-                              <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v12m6-6H6" />
-                          </svg>
-                          <span class="py-1">Tambah Data</span>
-                        </a>
+                  <form action="{{route('suratmasuk.index.suratmasuk')}}" method="GET" onclick="this.value=''">
+                    <div class="relative flex m-2 p-2 text-left justify-between">
+                      <div class="bg-white rounded sm:w-72 md:w-64 max-w-sm shadow-sm w-32 ml-4">
+                        <input type="search" name="search" id="search" value="{{request('search')}}" placeholder="Search" class="relative w-32 sm:w-72 md:w-64 pl-3 text-sm text-black outline-none border-2 border-gray-300 focus:outline-none bg-white" />
+                        <button class="cari outline-none focus:outline-none absolute bg-blue-700 p-2 py-2 rounded-r-full">
+                          <svg class="w-5 text-white h-5 cursor-pointer" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" stroke="currentColor" viewBox="0 0 24 24"><path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+                        </button>
+                      </div>
+                      <a href="{{ route('suratmasuk.add.suratmasuk')}}" class="inline-flex bg-blue-500 hover:bg-white hover:text-gray-900 dark:bg-gray-50 dark:hover:bg-blue-700 dark:hover:text-white  dark:active:bg-blue-800  text-white active:bg-blue-800 active:text-white dark:text-gray-800 dark:active:text-white text-xs font-bold uppercase px-3 py-1 rounded outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150" type="button">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-6 h-6">
+                          <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v12m6-6H6" />
+                        </svg>
+                        <span class="py-1">Tambah Data</span>
+                      </a>
                     </div>
+                  </form>
                   <table class="w-full">
                     <thead>
                       <tr class="text-xs font-semibold tracking-wide text-left text-gray-500 uppercase border-b dark:border-gray-700 bg-gray-50 dark:text-gray-400 dark:bg-gray-800 text-center">
